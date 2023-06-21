@@ -1,10 +1,9 @@
-
-import { ThreeDots } from 'react-loader-spinner';
-import styles from './Loader.module.scss';
+import { ThreeDots } from "react-loader-spinner";
+import styles from "./Loader.module.scss";
 
 export const Loader = () => {
   return (
-    <div className={styles['Wrap']}>
+    <div className={styles.Wrap}>
       <ThreeDots
         height={80}
         width={80}
@@ -16,3 +15,5 @@ export const Loader = () => {
     </div>
   );
 };
+
+

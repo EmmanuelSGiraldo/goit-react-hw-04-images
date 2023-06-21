@@ -1,25 +1,22 @@
+import { useState } from "react";
+import { Searchbar } from "../Searchbar";
+import { ImageGallery } from "../ImageGallery/ImageGallery";
+import styles from "./App.module.scss";
 
-import  { Component } from "react";
-import { Searchbar } from '../Searchbar';
-import { ImageGallery } from '../ImageGallery/ImageGallery';
-import styles from './App.module.scss';
+ export const App = () => {
+  const [query, setQuery] = useState("");
 
-export class App extends Component {
-  state = {
-    query: '',
-  }
-  
-  searchFormSubmitHandler = (query) => {
-    this.setState({ query });
+  const searchFormSubmitHandler = (query) => {
+    setQuery(query);
   };
 
-  render() {
-    return (
-      <div className={styles["app"]}>
-        <Searchbar onSubmit={this.searchFormSubmitHandler} />
-        <ImageGallery query={this.state.query} />
-        <h2>Designed by Emmanuel S Giraldo</h2>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={styles.app}>
+      <Searchbar onSubmit={searchFormSubmitHandler} />
+      <ImageGallery query={query} />
+      <h2>Designed by Emmanuel S Giraldo</h2>
+    </div>
+  );
+};
+
+
